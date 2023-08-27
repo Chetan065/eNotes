@@ -18,8 +18,8 @@ router.get('/fetchall', userinfo, async (req, res) => {
 //Endpoint 2 : Adding a note.
 
 router.post('/addnote', userinfo, [
-    body('title', 'Title min length 3').isLength({min : 3}),
-    body('description', 'Description min length 4').isLength({min : 4})
+    body('title', 'Title min length 1').isLength({min : 1}),
+    body('description', 'Description min length 1').isLength({min : 1})
 ], async (req, res) => {
     try {
         const { title, description, tag } = req.body;

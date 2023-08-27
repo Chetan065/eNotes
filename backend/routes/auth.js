@@ -11,7 +11,7 @@ var userinfo = require('../middleware/userinfo')
 router.post('/createuser', [
     body('name', 'name length min 4').isLength({ min: 4 }),
     body('email', 'Insert a valid Email').isEmail(),
-    body('password', 'password length min 4').isLength({ min: 5 }),
+    body('password', 'password length min 8').isLength({ min: 8 }),
 ], async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

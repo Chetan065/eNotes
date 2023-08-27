@@ -33,7 +33,7 @@ export default function Notes() {
             </button>
 
 
-            <div className="modal fade bg-transparent" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -57,7 +57,7 @@ export default function Notes() {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" ref={ref1}>Close</button>
-                            <button type="button" className="btn btn-dark" onClick={handleclick}>Save Note</button>
+                            <button disabled={note.etitle.length<1 || note.edescription.length<1} type="button" className="btn btn-dark" onClick={handleclick}>Save Note</button>
                         </div>
                     </div>
                 </div>
@@ -66,6 +66,7 @@ export default function Notes() {
                 <h3>Your Notes</h3>
             </div>
             <div className='d-flex flex-wrap justify-content-start'>
+                {notes.length ===0 && 'No Notes Added Yet!'}
                 {notes.map((note) => {
                     return <Note note={note} updateNote={updateNote} key={note._id} />
                 })}

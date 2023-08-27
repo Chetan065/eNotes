@@ -7,13 +7,10 @@ import { useState } from 'react';
 
 export default function Note(props) {
     const context = useContext(noteContext)
-    const {updateNote,deleteNote} = context;
-    const {note} = props;
+    const {deleteNote} = context;
+    const {note , updateNote} = props;
 
     
-    const updatenote = ()=>{
-
-    }
     return (
         <div>
             <div className="card text-white bg-dark border-white m-2" style={{width: "35rem"}}>
@@ -21,7 +18,7 @@ export default function Note(props) {
                 <p className="card-text">{note.date}</p>
                     <h5 className="card-title d-flex justify-content-between align-items-start flex-wrap">Title : {note.title}
                     <div>
-                        <img src={e} alt="" height={30} width={30} id='edit' className='mx-1'onClick={updatenote}/>
+                        <img src={e} alt="" height={30} width={30} id='edit' className='mx-1'onClick={()=>{updateNote(note)}}/>
                         <img src={d} alt="" height={30} width={30} id='delete' className='mx-1' onClick={()=>{deleteNote(note._id)}}/>
                     </div>
                     </h5>

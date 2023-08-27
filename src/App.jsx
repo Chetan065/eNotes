@@ -8,13 +8,17 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import NoteState from './context/notes/NoteState'
 
 function App() {
 
   return (
     <>
+    
       <Router>
+      <NoteState>
         <Navbar />
+        <div className="container">
         <Routes>
           <Route path='/about' element={<>
             <About />
@@ -25,8 +29,10 @@ function App() {
           </>}>
           </Route>
         </Routes>
+        </div>
+        </NoteState>
       </Router>
-
+      
     </>
   )
 }

@@ -1,11 +1,14 @@
 import React from 'react'
 import Note from './Note'
-import { useContext } from 'react'
+import { useContext,useEffect } from 'react'
 import noteContext from '../context/notes/noteContext'
 
 export default function Notes() {
     const context = useContext(noteContext)
-    const {notes , setNotes} = context;
+    const {notes,fetchNotes} = context;
+    useEffect(()=>{
+fetchNotes();
+    },[])
   return (
     <>
     <div className='text-white my-3'>

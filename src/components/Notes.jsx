@@ -71,7 +71,7 @@ export default function Notes() {
                 </div>
             </div>
             <div className='text-white my-3'>
-                <h3>Your Notes</h3>
+                <h3 id='allnotes'>Your Notes</h3>
             </div>
             <div className='d-flex flex-wrap justify-content-start'>
                 {notes.length ===0 && 'No Notes Added Yet!'}

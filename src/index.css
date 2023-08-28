@@ -18,3 +18,13 @@
   cursor: pointer;
   
 }
+
+#result:hover {
+  background-color:cadetblue;
+  cursor: pointer;
+}
+#allresults{
+  height: 100px;
+  overflow:hidden;
+  overflow-y: auto;
+}

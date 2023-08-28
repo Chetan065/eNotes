@@ -1,7 +1,7 @@
 import React from "react";
 import NoteContext from "./noteContext";
 import { useState } from "react";
-import { json } from "react-router-dom";
+
 
 const NoteState = (props)=>{
     const notesinitial = []
@@ -19,6 +19,8 @@ const NoteState = (props)=>{
             })
             
             const json = await response.json();
+            console.log(json)
+            
             setNotes(json)
             
         }

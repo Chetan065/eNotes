@@ -2,7 +2,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import o from './o.png'
 
 export default function Navbar() {
   let navigate = useNavigate();
@@ -14,7 +13,8 @@ export default function Navbar() {
   }
   return (
     <>
-      <nav className="navbar navbar-expand-md bg-dark navbar-dark sticky-top ">
+    
+      <nav className="navbar navbar-expand-md bg-black navbar-dark sticky-top ">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/home">eNotes</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,9 +34,10 @@ export default function Navbar() {
         {!localStorage.getItem('token')?<div className="btn-group m-2" role="group" aria-label="Basic outlined example">
         <Link to="/login"><button type="button" className="btn btn-outline-light mx-1">Login</button></Link>
         <Link to="/signup"><button type="button" className="btn btn-outline-light mx-1">SignUp</button></Link>
-        </div> : <button className='btn btn-light mx-2 d-flex' onClick={handlelogout}>
-          <img src={o} alt="" height={25} width={25} /> &nbsp;LogOut</button>}
+        </div> : <button className='btn btn-dark mx-2 d-flex' onClick={handlelogout}>
+        <i className="fa fa-sign-out text-white fs-3" ></i> &nbsp;LogOut</button>}
       </nav>
+      
     </>
   )
 }

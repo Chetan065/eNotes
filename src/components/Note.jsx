@@ -3,7 +3,7 @@ import e from './e.png'
 import d from './d.png'
 import { useContext } from 'react'
 import noteContext from '../context/notes/noteContext'
-import { useState } from 'react';
+
 
 export default function Note(props) {
     const context = useContext(noteContext)
@@ -31,6 +31,7 @@ export default function Note(props) {
                         <div>
                             <img src={e} alt="" height={30} width={30} id='edit' className='mx-1' onClick={() => { updateNote(note) }} 
                             />
+                            
                             <img src={d} alt="" height={30} width={30} id='delete' className='mx-1' onClick={() => { deleteNote(note._id) }} 
                              />
                         </div>

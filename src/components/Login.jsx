@@ -35,17 +35,17 @@ export default function Login() {
             <form onSubmit={handlesubmit}>
                 <div className='my-3 '><h3 className='text-white'>Login to Continue to eNotes</h3></div>
                 <div className="mb-3">
-                    <label htmlFor="exampleInputEmail1" className="form-label text-white" >Email address</label>
+                    <label htmlFor="exampleInputEmail1" className="form-label text-white" >Email address*</label>
                     <input type="email" className="form-control bg-transparent text-white " id="exampleInputEmail1" aria-describedby="emailHelp"  name='email'
-                     value={credentials.email} onChange={onchange}/>
+                     value={credentials.email} onChange={onchange} required/>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="exampleInputPassword1" className="form-label text-white">Password</label>
-                    <input type="password" className="form-control bg-transparent text-white " id="exampleInputPassword1" name='password' value={credentials.password} onChange={onchange}/>
+                    <label htmlFor="exampleInputPassword1" className="form-label text-white">Password*</label>
+                    <input type="password" className="form-control bg-transparent text-white " id="exampleInputPassword1" name='password' value={credentials.password} onChange={onchange} required/>
                 </div>
                 <div className='d-flex text-white justify-content-between align-items-center flex-wrap'>
                 <button type="submit" className="btn btn-light"><img src={cl} alt="" height={25} width={25} />&nbsp; Login</button>
-                <Link to="/signup" className='mx-2'>Create New Account ?</Link>
+                <Link to="/signup" className='mx-2 text-white'>Create New Account ?</Link>
                 </div>
                 
             </form>

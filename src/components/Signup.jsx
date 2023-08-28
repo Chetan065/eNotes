@@ -33,7 +33,7 @@ export default function Signup() {
     return (
         <section className='d-flex flex-wrap-reverse m-5 justify-content-center align-items-center'>
             <form onSubmit={handlesubmit} >
-                <div className='my-3 '><h3 className='text-white'>New to eNotes ? SignUp</h3></div>
+                <div className='my-3 '><h3 className='text-white'>New to eNotes ? Create Account</h3></div>
                 <div className="mb-3">
                     <label htmlFor="exampleInputName" className="form-label text-white" >Name* &nbsp;atleast 4 chars</label>
                     <input type="text" className="form-control bg-transparent text-white " id="exampleInputName" aria-describedby="emailHelp" value={credentials.name} onChange={onchange} name='name'/>
@@ -49,7 +49,7 @@ export default function Signup() {
                 <div className='d-flex flex-wrap justify-content-between align-items-center'>
                 <button type="submit" className="btn btn-light align-items-center p-2" disabled={credentials.name.length<4 || credentials.password.length<8 || credentials.email.length<1}>
                     <img src={cs} alt="" height={30} width={30} />&nbsp; SignUp</button>
-                <Link to='/login' className='mx-2'>Already Created ? SignIn</Link>
+                <Link to='/login' className='mx-2 text-white'>Already Created ? SignIn</Link>
                 </div>
                 
             </form>

@@ -3,6 +3,7 @@ import c from './c.png'
 import cs from './cs.png'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Signup() {
     const [credentials,setcredentials] = useState({name:"",email:"",password:""})
@@ -36,7 +37,6 @@ export default function Signup() {
                 <div className="mb-3">
                     <label htmlFor="exampleInputName" className="form-label text-white" >Name* &nbsp;atleast 4 chars</label>
                     <input type="text" className="form-control bg-transparent text-white " id="exampleInputName" aria-describedby="emailHelp" value={credentials.name} onChange={onchange} name='name'/>
-                    min 4 letters
                 </div>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label text-white" >Email address*</label>
@@ -46,10 +46,14 @@ export default function Signup() {
                     <label htmlFor="exampleInputPassword1" className="form-label text-white">Create Password* &nbsp; atleast 8 chars</label>
                     <input type="password" className="form-control bg-transparent text-white " id="exampleInputPassword1" value={credentials.password} onChange={onchange} name='password' />
                 </div>
+                <div className='d-flex flex-wrap justify-content-between align-items-center'>
                 <button type="submit" className="btn btn-light align-items-center p-2" disabled={credentials.name.length<4 || credentials.password.length<8 || credentials.email.length<1}>
                     <img src={cs} alt="" height={30} width={30} />&nbsp; SignUp</button>
+                <Link to='/login' className='mx-2'>Already Created ? SignIn</Link>
+                </div>
+                
             </form>
-            <img src={c} alt="" height={300} width={300} className='rounded mx-5' />
+            <img src={c} alt="" height={200} width={200} className=' mx-5' />
         </section>
     )
 }

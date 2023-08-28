@@ -36,7 +36,7 @@ export default function Note(props) {
                         </div>
                     </h5>
                     <p className="card-text">{note.description}</p>
-                    <p className="card-text"> {note.tag}</p>
+                    <p className="card-text">#{note.tag}</p>
                 </div>
             </div>
         </div>

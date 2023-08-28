@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import o from './o.png'
 
 export default function Navbar() {
   let navigate = useNavigate();
@@ -33,7 +34,8 @@ export default function Navbar() {
         {!localStorage.getItem('token')?<div className="btn-group m-2" role="group" aria-label="Basic outlined example">
         <Link to="/login"><button type="button" className="btn btn-outline-light mx-1">Login</button></Link>
         <Link to="/signup"><button type="button" className="btn btn-outline-light mx-1">SignUp</button></Link>
-        </div> : <button className='btn btn-outline-light mx-2' onClick={handlelogout}>LogOut</button>}
+        </div> : <button className='btn btn-light mx-2 d-flex' onClick={handlelogout}>
+          <img src={o} alt="" height={25} width={25} /> &nbsp;LogOut</button>}
       </nav>
     </>
   )

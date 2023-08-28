@@ -3,6 +3,7 @@ import u from './u.png'
 import cl from './cl.png'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
     const [credentials,setcredentials] = useState({email:"",password:""})
@@ -42,9 +43,13 @@ export default function Login() {
                     <label htmlFor="exampleInputPassword1" className="form-label text-white">Password</label>
                     <input type="password" className="form-control bg-transparent text-white " id="exampleInputPassword1" name='password' value={credentials.password} onChange={onchange}/>
                 </div>
+                <div className='d-flex text-white justify-content-between align-items-center flex-wrap'>
                 <button type="submit" className="btn btn-light"><img src={cl} alt="" height={25} width={25} />&nbsp; Login</button>
+                <Link to="/signup" className='mx-2'>Create New Account ?</Link>
+                </div>
+                
             </form>
-            <img src={u} alt="" height={300} width={300} className='rounded mx-5' />
+            <img src={u} alt="" height={200} width={200} className='rounded mx-5' />
         </section>
     )
 }

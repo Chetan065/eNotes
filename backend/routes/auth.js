@@ -13,14 +13,17 @@ router.post('/createuser', [
     body('email', 'Insert a valid Email').isEmail(),
     body('password', 'password length min 8').isLength({ min: 8 }),
 ], async (req, res) => {
+    let newsuc = false;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
     let user = await User.findOne({ email: req.body.email })
     if (user) {
+        
         return res.status(400).json({ error: "user already exists!" })
     }
+    newsuc = true;
     const salt = await bcrypt.genSalt(10);
     const secPass = await bcrypt.hash(req.body.password, salt);
     user = await User.create({
@@ -34,7 +37,7 @@ router.post('/createuser', [
         }
     }
     const authtoken = jwt.sign(data, JWT_SECRET)
-    res.json({ authtoken })
+    res.json({ newsuc, authtoken })
 })
 
 // Endpoint 2 : Login of User
@@ -43,27 +46,31 @@ router.post('/login', [
     body('email', 'Email is not valid').isEmail(),
     body('password', 'Password is required').exists(),
 ], async (req, res) => {
+    let success = false;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(400).json({ success ,  errors: errors.array() });
+        
     }
     const { email, password } = req.body
     try {
         let user = await User.findOne({ email })
         if (!user) {
-            return res.status(400).json({ wrong: "Please login with correct credentials !" })
+            return res.status(400).json({ success, wrong: "Please login with correct credentials !" })
         }
         const correct = await bcrypt.compare(password, user.password)
         if (!correct) {
-            return res.status(400).json({ wrong: "Please login with correct credentials !" })
+            return res.status(400).json({ success,wrong: "Please login with correct credentials !" })
         }
+        
         const data = {
             user: {
                 id: user.id
             }
         }
         const authtoken = jwt.sign(data, JWT_SECRET)
-        res.json({ authtoken })
+        success = true;
+        res.json({success ,  authtoken })
 
     } catch (error) {
         res.status(404).send("Server did not respond !");

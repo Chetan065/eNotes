@@ -9,6 +9,8 @@ import {
   Route
 } from "react-router-dom";
 import NoteState from './context/notes/NoteState'
+import Login from './components/Login'
+import Signup from './components/Signup'
 
 function App() {
 
@@ -26,6 +28,14 @@ function App() {
           </Route>
           <Route path='/home' element={<>
             <Home />
+          </>}>
+          </Route>
+          <Route path='/login' element={<>
+            <Login/>
+          </>}>
+          </Route>
+          <Route path='/signup' element={<>
+            <Signup/>
           </>}>
           </Route>
         </Routes>

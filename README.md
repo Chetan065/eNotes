@@ -53,7 +53,7 @@ Follow these steps to set up the project locally on your machine.
 ### Installation
 
 1. Clone the repository: `git clone https://github.com/Chetan065/eNotes.git`
-2. Navigate to the project directory: `cd enotesfront`
+2. Navigate to the project directory: `cd eNotes`
 3. Install dependencies: `pnpm install `
 4. Start the development server: `pnpm run dev`
 5. Open your web browser and go to `http://localhost:5173`

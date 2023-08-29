@@ -23,7 +23,6 @@ const [result,setResult] = useState([]);
       value && ele &&  ele.toLowerCase().includes(value)
     )
   }) 
-  console.log(titles1)
     setResult(titles1)
   }
 

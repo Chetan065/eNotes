@@ -45,7 +45,7 @@ export default function Login() {
                 </div>
                 <div className='d-flex text-white justify-content-between align-items-center flex-wrap'>
                 <button type="submit" className="btn btn-light"><img src={cl} alt="" height={25} width={25} />&nbsp; Login</button>
-                <Link to="/signup" className='mx-2 text-white'>Create New Account ?</Link>
+                <Link to="/signup" className='mx-1 my-2 text-white'>Create New Account ?</Link>
                 </div>
                 
             </form>

@@ -11,6 +11,7 @@ import {
 import NoteState from './context/notes/NoteState'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import Landing from './components/Landing'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Router>
       <NoteState>
         <Navbar />
+        
         <div className="container">
         <Routes>
           <Route path='/about' element={<>
@@ -39,7 +41,9 @@ function App() {
           </>}>
           </Route>
         </Routes>
+        <Landing/>
         </div>
+          
         </NoteState>
       </Router>
       

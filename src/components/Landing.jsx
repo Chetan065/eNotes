@@ -5,8 +5,6 @@ import a from './a.png'
 import up from './up.png'
 import dl from './dl.png'
 
-
-
 export default function Landing() {
     let navigate = useNavigate()
     const handlelogout = () => {
@@ -29,7 +27,7 @@ export default function Landing() {
                             <h4 className="card-title">Add a Note</h4>
                             <hr />
                             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <Link to="/signup" className="btn btn-success">Add Note</Link>
+                            <Link to="/home" className="btn btn-success">Add Note</Link>
                         </div>
                     </div>
                     <div className="card my-2 bg-transparent text-white border-white" style={{ width: "20rem" }}>
@@ -39,7 +37,7 @@ export default function Landing() {
                                 <h4 className="card-title">Update a Note</h4>
                                 <hr />
                                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <Link to="/login" className="btn btn-warning">Update Note</Link>
+                                <Link to="/home" className="btn btn-warning">Update Note</Link>
                             </div>
                            
                     </div>
@@ -50,7 +48,7 @@ export default function Landing() {
                                     <h4 className="card-title">Delete a Note</h4>
                                     <hr />
                                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <Link to="/login" className="btn btn-danger">Delete Note</Link>
+                                    <Link to="/home" className="btn btn-danger">Delete Note</Link>
                                 </div>
                             
                     </div>

@@ -24,24 +24,20 @@ function App() {
         
         <div className="container">
         <Routes>
-          <Route path='/about' element={<>
+          <Route path='/about' element={
             <About />
-          </>}>
-          </Route>
-          <Route path='/home' element={<>
+          }/>
+          <Route path='/' element={<Landing/>}/>
+          <Route path='/home' element={
             <Home />
-          </>}>
-          </Route>
-          <Route path='/login' element={<>
+          }/>
+          <Route path='/login' element={
             <Login/>
-          </>}>
-          </Route>
-          <Route path='/signup' element={<>
+          }/>
+          <Route path='/signup' element={
             <Signup/>
-          </>}>
-          </Route>
+          }/>
         </Routes>
-        <Landing/>
         </div>
           
         </NoteState>

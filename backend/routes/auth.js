@@ -1,10 +1,11 @@
+require("dotenv").config();
 const express = require('express')
 const User = require('../models/User')
 const bcrypt = require('bcryptjs');
 const router = express.Router()
 const { body, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken')
-const JWT_SECRET = 'HelloGreatUser$100'
+const JWT_SECRET = process.env.API_KEY;
 var userinfo = require('../middleware/userinfo')
 
 //Endpoint 1 : Signup for a user

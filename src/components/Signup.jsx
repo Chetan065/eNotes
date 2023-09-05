@@ -21,7 +21,6 @@ export default function Signup() {
                 body : JSON.stringify({name:credentials.name,email:credentials.email,password:credentials.password})
             })
             const json = await response.json()
-            console.log(json)
             if(json.newsuc){
                 localStorage.setItem('token',json.authtoken)
                 history("/home");

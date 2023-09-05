@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <>
     
-      <nav className="navbar navbar-expand-md bg-black navbar-dark sticky-top ">
+      <nav className="navbar navbar-expand-md bg-dark navbar-dark sticky-top ">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">eNotes</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

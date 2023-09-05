@@ -9,7 +9,7 @@ export default function Landing() {
     let navigate = useNavigate()
     const handlelogout = () => {
         localStorage.removeItem('token')
-        navigate('/login')
+        navigate('/')
     }
     return (
         <>
@@ -26,7 +26,7 @@ export default function Landing() {
                         <div className="card-body">
                             <h4 className="card-title">Add a Note</h4>
                             <hr />
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p className="card-text">Effortlessly create new notes with our intuitive and user-friendly interface. We ensure that starting a new note is a seamless process, allowing you to capture your thoughts without any distractions.</p>
                             <Link to="/home" className="btn btn-success">Add Note</Link>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ export default function Landing() {
                             <div className="card-body">
                                 <h4 className="card-title">Update a Note</h4>
                                 <hr />
-                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p className="card-text">Your ideas evolve, and so should your notes. With e-Notes, updating your notes is as simple as editing a document. Make changes, add new information, and keep your notes relevant over time.</p>
                                 <Link to="/home" className="btn btn-warning">Update Note</Link>
                             </div>
                            
@@ -47,7 +47,7 @@ export default function Landing() {
                                 <div className="card-body">
                                     <h4 className="card-title">Delete a Note</h4>
                                     <hr />
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p className="card-text">Not all notes are meant to be permanent. Delete outdated or irrelevant notes with confidence, knowing that our platform makes the process straightforward and stress-free.</p>
                                     <Link to="/home" className="btn btn-danger">Delete Note</Link>
                                 </div>
                             

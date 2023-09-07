@@ -9,7 +9,7 @@ const NoteState = (props)=>{
 
         // Fetch All
         const fetchNotes= async ()=>{
-            const response = await fetch(`http://localhost:5000/api/notes/fetchall`,{
+            const response = await fetch(`https://enbackend.onrender.com/api/notes/fetchall`,{
                 method :'GET',
                 headers :{
                     'Content-Type' : 'application/json',
@@ -27,7 +27,7 @@ const NoteState = (props)=>{
              
         //Add Note
         const addNote= async (title,description,tag)=>{
-            const response = await fetch(`http://localhost:5000/api/notes/addnote`,{
+            const response = await fetch(`https://enbackend.onrender.com/api/notes/addnote`,{
                 method :'POST',
                 headers :{
                     'Content-Type' : 'application/json',
@@ -49,7 +49,7 @@ const NoteState = (props)=>{
         }
         //Delete Note
         const deleteNote= async (id)=>{
-            const response = await fetch(`http://localhost:5000/api/notes/deletenote/${id}`,{
+            const response = await fetch(`https://enbackend.onrender.com/api/notes/deletenote/${id}`,{
                 method :'DELETE',
                 headers :{
                     'Content-Type' : 'application/json',
@@ -62,7 +62,7 @@ const NoteState = (props)=>{
 
         //Update Note
         const updateNotes= async (id,title,description,tag)=>{
-            const response = await fetch(`http://localhost:5000/api/notes/updatenote/${id}`,{
+            const response = await fetch(`https://enbackend.onrender.com/api/notes/updatenote/${id}`,{
                 method :'PUT',
                 headers :{
                     'Content-Type' : 'application/json',
